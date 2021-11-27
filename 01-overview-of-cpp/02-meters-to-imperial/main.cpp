@@ -1,4 +1,4 @@
-/* Programming Abstractions in C++ (in JavaScript)
+/* Programming Abstractions in C++
  *
  * Exercise 01.02
  *
