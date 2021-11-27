@@ -1,0 +1,25 @@
+README for StanfordCPPLib
+Last modified on Sat Aug 16 17:49:04 2014 by eroberts
+-----------------------------------------------------
+This package contains the code for the Stanford Portable C++ library, as
+described in the paper by Eric Roberts and Keith Schwarz included in the
+doc directory.
+
+The Makefile in the root directory should make a complete version of the
+library on Unix-based systems or Mac OS X.  Building the .lib file for
+Windows-based systems depends on what version of the operating system
+and what programming environment you are using.  The sources included
+in this package should compile in any standard C++ environment, but you
+will need to create the necessary projects on your own.  The spl.jar
+file in the java directory should work on any platform that supports
+Java 5 (or a more recent version).
+
+This package is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
