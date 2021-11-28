@@ -9,4 +9,5 @@
 - The 2016 class website has a lot of [links](https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1168/links.shtml) to previous years that can be bit difficult to Google. The course reader (*Programming Abstractions in C++*) can be easily obtained from most of the class sites.
 - The StanfordCPPLib package is included for completeness but can be obtained directly from [this website](https://cs.stanford.edu/people/eroberts/StanfordCPPLib/).
 - To build an exercise that includes a StanfordCPPLib header be sure the library is built and then include the library 
-  - e.g. from inside an exercise folder run `g++ main.cpp -L ../../StanfordCPPLib/lib -lStanfordCPPLib`
+  - e.g. from inside an exercise folder run `g++ main.cpp -L ../../StanfordCPPLib/lib -lStanfordCPPLib -I ../../StanfordCPPLib/include`
+  - For exercises that use graphics libraries like "gwindow.h" either use the Makefile-Example as a guide for building or run the above command and copy the `./StanfordCPPLib/java/spl.jar` into the exercise folder.
