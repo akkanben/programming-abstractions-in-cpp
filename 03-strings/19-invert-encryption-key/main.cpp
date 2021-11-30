@@ -24,12 +24,12 @@ std::string encodeLetterSubCipher(std::string str, std::string key);
 std::string invertKey(std::string key);
 
 int main() {
-  std::string myString = "WORKERS OF THE WORLD UNITE!";
-  std::string myKey = "QWERTYUIOPASDFGHJKLZXCVBNM";
-  std::string encryptedStr = encodeLetterSubCipher(myString, myKey);
-  std::string invertedKey = invertKey(myKey);
-  std::cout << "Original string:          " << myString << std::endl;
-  std::cout << "Encryption key:           " << myKey << std::endl;
+  std::string str = "WORKERS OF THE WORLD UNITE!";
+  std::string key = "QWERTYUIOPASDFGHJKLZXCVBNM";
+  std::string encryptedStr = encodeLetterSubCipher(str, key);
+  std::string invertedKey = invertKey(key);
+  std::cout << "Original string:          " << str << std::endl;
+  std::cout << "Encryption key:           " << key << std::endl;
   std::cout << "Encrypted string:         " << encryptedStr << std::endl;
   std::cout << "Inverted key:             " << invertedKey << std::endl;
   std::cout << "String from inverted key: "
