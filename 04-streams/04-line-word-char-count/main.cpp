@@ -9,6 +9,7 @@
  * Shakespeare’s King Lear,
  *
  * <Lear.txt image>
+ *
  * your program should be able to generate the following sample run:
  *
  * <sample run image>
@@ -26,11 +27,10 @@
  *
  */
 
+#include "../../StanfordCPPLib/include/filelib.h"
 #include <fstream>
 #include <iostream>
 #include <string>
-
-std::string promptUserForFile(std::ifstream &infile, std::string prompt = "");
 
 int main() {
   std::ifstream infile;
@@ -61,19 +61,4 @@ int main() {
   std::cout << "Lines: " << lineCount << std::endl;
   infile.close();
   return 0;
-}
-
-std::string promptUserForFile(std::ifstream &infile, std::string prompt) {
-  while (true) {
-    std::cout << prompt;
-    std::string filename;
-    getline(std::cin, filename);
-    infile.open(filename.c_str());
-    if (!infile.fail())
-      return filename;
-    infile.clear();
-    std::cout << "Unable to open that file. Try again." << std::endl;
-    if (prompt == "")
-      prompt = "Input file: ";
-  }
 }

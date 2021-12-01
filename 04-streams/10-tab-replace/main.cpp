@@ -22,12 +22,11 @@
  * Solution 2021 Ben Mills
  */
 
+#include "../../StanfordCPPLib/include/filelib.h"
 #include <fstream>
 #include <iostream>
 #include <string>
 
-std::string promptUserForFile(std::ifstream &inFile, std::string prompt);
-std::string promptUserForFile(std::ofstream &outFile, std::string prompt);
 void replaceTabs(std::ifstream &inFile, std::ofstream &outFile, int numTab = 4);
 
 int main() {
@@ -40,36 +39,6 @@ int main() {
   outFile.close();
 
   return 0;
-}
-
-std::string promptUserForFile(std::ifstream &inFile, std::string prompt) {
-  while (true) {
-    std::cout << prompt;
-    std::string fileName;
-    getline(std::cin, fileName);
-    inFile.open(fileName.c_str());
-    if (!inFile.fail())
-      return fileName;
-    inFile.clear();
-    std::cout << "Unable to open that file. Try again." << std::endl;
-    if (prompt == "")
-      prompt = "Input file: ";
-  }
-}
-
-std::string promptUserForFile(std::ofstream &outFile, std::string prompt) {
-  while (true) {
-    std::cout << prompt;
-    std::string fileName;
-    getline(std::cin, fileName);
-    outFile.open(fileName.c_str());
-    if (!outFile.fail())
-      return fileName;
-    outFile.clear();
-    std::cout << "Unable to open or create that file. Try again." << std::endl;
-    if (prompt == "")
-      prompt = "Output file: ";
-  }
 }
 
 void replaceTabs(std::ifstream &inFile, std::ofstream &outFile, int numTab) {

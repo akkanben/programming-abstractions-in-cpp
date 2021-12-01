@@ -27,12 +27,12 @@
  * Solution 2021 Ben Mills
  */
 
+#include "../../StanfordCPPLib/include/filelib.h"
 #include "../../StanfordCPPLib/include/random.h"
 #include <fstream>
 #include <iostream>
 #include <string>
 
-std::string promptUserForFile(std::ifstream &inFile, std::string prompt = "");
 std::string itsAllGreek(std::ifstream &inFile);
 
 int main() {
@@ -57,19 +57,4 @@ std::string itsAllGreek(std::ifstream &inFile) {
       greek += ch;
   }
   return greek;
-}
-
-std::string promptUserForFile(std::ifstream &inFile, std::string prompt) {
-  while (true) {
-    std::cout << prompt;
-    std::string fileName;
-    getline(std::cin, fileName);
-    inFile.open(fileName.c_str());
-    if (!inFile.fail())
-      return fileName;
-    inFile.clear();
-    std::cout << "Unable to open that file. Try again." << std::endl;
-    if (prompt == "")
-      prompt = "Input file: ";
-  }
 }

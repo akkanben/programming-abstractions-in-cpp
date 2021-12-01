@@ -9,11 +9,10 @@
  * Solution 2021 Ben Mills
  */
 
+#include "../../StanfordCPPLib/include/filelib.h"
 #include <fstream>
 #include <iostream>
 #include <string>
-
-std::string promptUserForFile(std::ifstream &infile, std::string prompt = "");
 
 int main() {
   std::ifstream infile;
@@ -28,19 +27,4 @@ int main() {
   std::cout << "The longest line is: " << longestLine << std::endl;
   infile.close();
   return 0;
-}
-
-std::string promptUserForFile(std::ifstream &infile, std::string prompt) {
-  while (true) {
-    std::cout << prompt;
-    std::string filename;
-    getline(std::cin, filename);
-    infile.open(filename.c_str());
-    if (!infile.fail())
-      return filename;
-    infile.clear();
-    std::cout << "Unable to open that file. Try again." << std::endl;
-    if (prompt == "")
-      prompt = "Input file: ";
-  }
 }
