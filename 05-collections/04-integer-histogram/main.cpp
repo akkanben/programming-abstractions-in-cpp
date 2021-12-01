@@ -57,7 +57,7 @@ int main() {
 }
 
 void printHistogram(Vector<int> &data) {
-  Vector<std::string> asterisk(data.size());
+  Vector<std::string> asterisk;
   Vector<std::string> decades;
   initializeDecades(decades);
   // initialize asterisk
