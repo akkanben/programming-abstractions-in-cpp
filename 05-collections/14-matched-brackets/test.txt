@@ -1,0 +1,7 @@
+{ s = 2 * (a[2] + 3); x = (1 + (2)); }
+(([])
+)(
+{(})
+while (getline(inFile, line)) {
+bool isCorrectlyBracketed(std::string str);
+if (str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}' || str[i] == '[' || str[i] == ']')
