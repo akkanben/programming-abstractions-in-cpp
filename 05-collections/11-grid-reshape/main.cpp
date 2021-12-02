@@ -1,6 +1,6 @@
 /* Programming Abstractions in C++
  *
- * Exercise
+ * Exercise 05-11
  *
  * The resize method in the Grid class resets the dimensions of the grid but
  * also initializes every element of the grid to its default value. Write a
