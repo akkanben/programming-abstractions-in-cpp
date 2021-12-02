@@ -13,9 +13,11 @@
  * Solution 2021 Ben Mills
  */
 
+#include <iomanip>
+#include <iostream>
+
 #include "../../StanfordCPPLib/include/queue.h"
 #include "../../StanfordCPPLib/include/random.h"
-#include <iostream>
 
 const double ARRIVAL_PROBABILITY = 0.05;
 const int MIN_SERVICE_TIME = 5;
@@ -54,7 +56,6 @@ void runSimulation(int &nServed, int &totalWait, int &totalLength) {
       } else
         queueC.enqueue(t);
     }
-
     if (timeRemainingA > 0) {
       timeRemainingA--;
     } else if (!queueA.isEmpty()) {
@@ -63,7 +64,6 @@ void runSimulation(int &nServed, int &totalWait, int &totalLength) {
       timeRemainingA = randomInteger(MIN_SERVICE_TIME, MAX_SERVICE_TIME);
     }
     totalLength += queueA.size();
-
     if (timeRemainingB > 0) {
       timeRemainingB--;
     } else if (!queueB.isEmpty()) {
@@ -72,7 +72,6 @@ void runSimulation(int &nServed, int &totalWait, int &totalLength) {
       timeRemainingB = randomInteger(MIN_SERVICE_TIME, MAX_SERVICE_TIME);
     }
     totalLength += queueB.size();
-
     if (timeRemainingC > 0) {
       timeRemainingC--;
     } else if (!queueC.isEmpty()) {
@@ -85,16 +84,17 @@ void runSimulation(int &nServed, int &totalWait, int &totalLength) {
 }
 
 void printReport(int nServed, int totalWait, int totalLength) {
-  std::cout << "Simulation result given the following consants:" << std::endl;
-  std::cout << fixed;
-  std::cout << " SIMULATION_TIME :     " << SIMULATION_TIME << std::endl;
-  std::cout << " ARRIVAL_PROBABILITY:  " << ARRIVAL_PROBABILITY << std::endl;
-  std::cout << " MIN_SERVICE_TIME:     " << MIN_SERVICE_TIME << std::endl;
-  std::cout << " MAX_SERVICE_TIME:     " << MAX_SERVICE_TIME << std::endl;
-  std::cout << std::endl;
-  std::cout << "Customers served:      " << nServed << std::endl;
-  std::cout << "Average waiting time:  " << double(totalWait) / nServed
-            << std::endl;
-  std::cout << "Average queue length:  "
-            << double(totalLength) / SIMULATION_TIME << std::endl;
+  std::cout << "Simulation result given the following consants:" << endl;
+  std::cout << fixed << setprecision(2);
+  std::cout << " SIMULATION_TIME :     " << setw(4) << SIMULATION_TIME << endl;
+  std::cout << "  ARRIVAL_PROBABILITY: " << setw(7) << ARRIVAL_PROBABILITY
+            << endl;
+  std::cout << "  MIN_SERVICE_TIME:    " << setw(4) << MIN_SERVICE_TIME << endl;
+  std::cout << "  MAX_SERVICE_TIME:    " << setw(4) << MAX_SERVICE_TIME << endl;
+  std::cout << endl;
+  std::cout << "Customers served:      " << setw(4) << nServed << endl;
+  std::cout << "Average waiting time:  " << setw(7)
+            << double(totalWait) / nServed << endl;
+  std::cout << "Average queue length:  " << setw(7)
+            << double(totalLength) / SIMULATION_TIME << endl;
 }
