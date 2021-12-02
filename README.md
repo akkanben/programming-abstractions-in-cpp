@@ -11,3 +11,4 @@
 - To build an exercise that includes a StanfordCPPLib header be sure the library is built and then include the library 
   - e.g. from inside an exercise folder run `g++ main.cpp -L ../../StanfordCPPLib/lib -lStanfordCPPLib -I ../../StanfordCPPLib/include`
   - For exercises that use graphics libraries like "gwindow.h" either use the Makefile-Example as a guide for building or run the above command and copy the `./StanfordCPPLib/java/spl.jar` into the exercise folder.
+  - I'm getting an error when I use <iomanip> with most of the StanfordCPPLib collection classes. For now I'm just removing <iomanip> from the exercises and living with poor formatting. I'll investigate this later or maybe swap them to use STL collections instead.
