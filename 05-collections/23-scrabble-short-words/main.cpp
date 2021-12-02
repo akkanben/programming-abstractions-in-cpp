@@ -1,6 +1,6 @@
 /* Programming Abstractions in C++
  *
- * Exercise
+ * Exercise 05-23
  *
  * In Scrabble, knowing the two-letter word list is important because those
  * short words make it easy to “hook” a new word into tiles already on the
