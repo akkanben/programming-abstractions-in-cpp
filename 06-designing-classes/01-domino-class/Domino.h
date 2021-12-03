@@ -1,5 +1,5 @@
-#ifndef _point_h
-#define _point_h
+#ifndef _domino_h
+#define _domino_h
 
 #include <iostream>
 #include <string>
