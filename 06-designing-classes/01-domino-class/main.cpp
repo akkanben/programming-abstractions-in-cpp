@@ -38,7 +38,7 @@
 #include <string>
 
 #include "../../StanfordCPPLib/include/vector.h"
-#include "domino.h"
+#include "Domino.h"
 
 const int MAX_DOTS = 6;
 

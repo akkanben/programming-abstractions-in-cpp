@@ -1,7 +1,7 @@
 #include <string>
 
 #include "../../StanfordCPPLib/include/strlib.h"
-#include "domino.h"
+#include "Domino.h"
 
 Domino::Domino() {
   leftDots = 0;
@@ -20,4 +20,3 @@ std::string Domino::toString() {
   return "[" + integerToString(leftDots) + "|" + integerToString(rightDots) +
          "]";
 }
-
