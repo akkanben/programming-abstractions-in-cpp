@@ -12,4 +12,6 @@ enum Suit { CLUBS, DIAMONDS, HEARTS, SPADES };
 
 std::string suitToString(Suit s);
 
+Suit operator++(Suit &s, int);
+
 #endif

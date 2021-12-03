@@ -6,8 +6,6 @@
 
 #include "Suit.h"
 
-Suit operator++(Suit &s, int);
-
 class Card {
 private:
   Suit suit;
