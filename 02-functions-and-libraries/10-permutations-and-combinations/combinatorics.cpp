@@ -18,16 +18,15 @@ int permutations(int n, int k) {
 }
 
 int combinations(int n, int k) {
-  int comb = 1;
-  int k_count = 1;
-  int steps = n - (n - k);
-  for (int i = 0; i < steps; i++) {
-    comb *= n;
+  double numerator = 1;
+  double denominator = 1;
+  int n_steps = n - (n - k);
+  for (int i = 0; i < n_steps; i++) {
+    numerator *= n;
     n -= 1;
   }
   for (int i = 1; i <= k; i++) {
-    k_count *= i;
+    denominator *= i;
   }
-  comb /= k_count;
-  return comb;
+  return numerator / denominator;
 }
