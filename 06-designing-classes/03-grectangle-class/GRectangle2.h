@@ -15,16 +15,14 @@ public:
   bool contains(GPoint pt);
   bool contains(double x_i, double y_i);
   std::string toString();
+  friend bool operator==(const GRectangle2 &rect1, const GRectangle2 &rect2);
+  friend bool operator!=(const GRectangle2 &rect1, const GRectangle2 &rect2);
 
 private:
   double x;
   double y;
   double width;
   double height;
-
-  friend bool operator==(const GRectangle2 &rect1, const GRectangle2 &rect2);
-  friend bool operator!=(const GRectangle2 &rect1, const GRectangle2 &rect2);
-  friend int hashCode(const GRectangle2 &rect);
 };
 
 #endif
