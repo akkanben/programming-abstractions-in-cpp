@@ -75,39 +75,41 @@ std::string TokenScanner::gatherString() {
 
 std::string TokenScanner::gatherNumber() {
   std::string output = "";
-  bool done = false;
-  while (cp < buffer.length() && !done) {
-    if (buffer[cp] == '.') {
-      output += buffer[cp];
-      cp++;
-      while (cp < buffer.length() && !done) {
-        if (buffer[cp] == 'E') {
-          output += buffer[cp];
-          cp++;
-          if (buffer[cp] == '+' || buffer[cp] == '-') {
-            output += buffer[cp];
-            cp++;
-          }
-          while (cp < buffer.length() && !done) {
-            if (isdigit(buffer[cp])) {
-              output += buffer[cp];
-              cp++;
-            } else
-              done = true;
-          }
-        }
-        if (isdigit(buffer[cp])) {
-          output += buffer[cp];
-          cp++;
-        } else
-          done = true;
-      }
+  enum State { INTEGER, REAL, SCIENCE, FINAL, DONE };
+  State currentState = INTEGER;
+  while (cp < buffer.length() && currentState != DONE) {
+    switch (currentState) {
+    case INTEGER:
+      if (buffer[cp] == '.')
+        currentState = REAL;
+      else if (buffer[cp] == 'E')
+        currentState = SCIENCE;
+      else if (!isdigit(buffer[cp]))
+        currentState = DONE;
+      break;
+    case REAL:
+      if (buffer[cp] == 'E')
+        currentState = SCIENCE;
+      else if (!isdigit(buffer[cp]))
+        currentState = DONE;
+      break;
+    case SCIENCE:
+      if (buffer[cp] == '+' || buffer[cp] == '-')
+        currentState = FINAL;
+      else if (!isdigit(buffer[cp]))
+        currentState = DONE;
+      break;
+    case FINAL:
+      if (!isdigit(buffer[cp]))
+        currentState = DONE;
+      break;
+    case DONE:
+      break;
     }
-    if (isdigit(buffer[cp])) {
+    if (currentState != DONE) {
       output += buffer[cp];
       cp++;
-    } else
-      done = true;
+    }
   }
   return output;
 }
