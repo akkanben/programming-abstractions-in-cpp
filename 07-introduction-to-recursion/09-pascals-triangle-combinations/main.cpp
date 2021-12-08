@@ -57,7 +57,6 @@ int main() {
     std::cout << std::setw((size / 2 * (size - i)) / 2) << " ";
     for (int j = 0; j <= i; j++) {
       std::cout << std::right << std::setw(size / 2) << c(i, j);
-      // std::cout << "c(" << i << ", " << j << ")";
     }
     std::cout << std::endl;
     std::cout << std::endl;
