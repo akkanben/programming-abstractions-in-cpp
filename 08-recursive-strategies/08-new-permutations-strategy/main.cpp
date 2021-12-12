@@ -31,19 +31,18 @@ int main() {
   foreach (std::string s in generatePermutations(str)) {
     cout << "  \"" << s << "\"" << std::endl;
   }
-
   return 0;
 }
 
 Set<std::string> generatePermutations(std::string str) {
   Set<std::string> result;
-  if (str == "")
+  if (str == "") {
     result += "";
-  else {
+  } else {
     char ch = str[0];
-    std::string rest = str.substr(1);
+    string rest = str.substr(1);
     foreach (std::string s in generatePermutations(rest)) {
-      for (int i = 0; i < s.length(); i++) {
+      for (int i = 0; i < str.length(); i++) {
         result += s.substr(0, i) + ch + s.substr(i);
       }
     }
