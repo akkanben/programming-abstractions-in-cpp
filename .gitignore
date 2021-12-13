@@ -3,6 +3,7 @@ StanfordCPPLib/
 templates/
 a.out
 */*/spl.jar
+.nfs*
 
 # Compiled Object files
 *.slo
