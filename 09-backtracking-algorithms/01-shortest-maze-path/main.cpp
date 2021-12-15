@@ -42,7 +42,8 @@ int getLowestCount(Vector<int> vec);
 /* Main program */
 
 int main() {
-  Maze maze("maze.txt");
+  GWindow gw;
+  Maze maze("maze.txt", gw);
   std::cout << "The shortest path is "
             << shortestPathLength(maze, maze.getStartPosition())
             << " spaces long." << std::endl;
@@ -79,6 +80,7 @@ bool findSolutionPath(Maze &maze, Point start, Vector<Point> &path,
   if (maze.isMarked(start))
     return false;
   path.add(start);
+  pause(10);
   maze.markSquare(start);
   for (Direction dir = NORTH; dir <= WEST; dir++) {
     if (!maze.wallExists(start, dir)) {
