@@ -1,8 +1,27 @@
 /* Programming Abstractions in C++
  *
- * Exercise
+ * Exercise 09-02
  *
- * QUESTION
+ * As implemented in Figure 9-3, the solveMaze function unmarks each square
+ * as it discovers there are no solutions from that point. Although this design
+ * strategy has the advantage that the final configuration of the maze shows the
+ * solution path as a series of marked squares, the decision to unmark squares
+ * as you backtrack has a cost in terms of the overall efficiency of the
+ * algorithm. If you’ve marked a square and then backtracked through it, you’ve
+ * already explored the possibilities leading from that square. If you come back
+ * to it by some other path, you might as well rely on your earlier analysis
+ * instead of exploring the same options again.
+ *
+ * To give yourself a sense of how much these unmarking operations cost in
+ * terms of efficiency, extend the solveMaze program so that it records the
+ * number of recursive calls as it proceeds. Use this program to calculate how
+ * many recursive calls are required to solve the following maze if the call to
+ * unmarkSquare remains part of the program:
+ *
+ *  <image of maze>
+ *
+ * Run your program again, this time without the call to unmarkSquare. What
+ * happens to the number of recursive calls?
  *
  * Solution 2021 Ben Mills
  */

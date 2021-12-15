@@ -1,6 +1,6 @@
 /* Programming Abstractions in C++
  *
- * Exercise
+ * Exercise 09-01
  *
  * In many mazes, there are multiple paths. For example, Figure 9-7 shows three
  * solutions for the same maze. None of these solutions, however, is optimal.
@@ -31,15 +31,11 @@
 #include "../../StanfordCPPLib/include/vector.h"
 #include "maze.h"
 
-/* Function prototypes */
-
 int shortestPathLength(Maze &maze, Point start);
 bool findSolutionPath(Maze &maze, Point start, Vector<Point> &path,
                       Vector<int> &count);
 Point adjacentPoint(Point start, Direction dir);
 int getLowestCount(Vector<int> vec);
-
-/* Main program */
 
 int main() {
   GWindow gw;
@@ -47,6 +43,7 @@ int main() {
   std::cout << "The shortest path is "
             << shortestPathLength(maze, maze.getStartPosition())
             << " spaces long." << std::endl;
+
   return 0;
 }
 
