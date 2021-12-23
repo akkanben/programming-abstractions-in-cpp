@@ -54,14 +54,15 @@ int main() {
 }
 
 void drawSierpinski(GWindow &gw, double x, double y, double size, int order) {
+  double reducedSize = size / 2;
   if (order == 0) {
-    gw.drawLine(x, y, x - (size / 2), y + size);
-    gw.drawLine(x - (size / 2), y + size, x + (size / 2), y + size);
-    gw.drawLine(x + (size / 2), y + size, x, y);
+    gw.drawLine(x, y, x - reducedSize, y + size);
+    gw.drawLine(x - reducedSize, y + size, x + reducedSize, y + size);
+    gw.drawLine(x + reducedSize, y + size, x, y);
   } else {
     drawSierpinski(gw, x, y, size, order - 1);
     drawSierpinski(gw, x, y, size / 2, order - 1);
-    drawSierpinski(gw, x - (size / 4), y + (size / 2), size / 2, order - 1);
-    drawSierpinski(gw, x + (size / 4), y + (size / 2), size / 2, order - 1);
+    drawSierpinski(gw, x - (size / 4), y + reducedSize, size / 2, order - 1);
+    drawSierpinski(gw, x + (size / 4), y + reducedSize, size / 2, order - 1);
   }
 }
