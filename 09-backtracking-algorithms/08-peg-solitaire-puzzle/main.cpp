@@ -21,6 +21,9 @@
  * peg in the center hole. Write a program to solve this puzzle.
  *
  * Solution 2021 Ben Mills
+ *
+ * Results took 128 minutes in my test.
+ *
  */
 #include <iostream>
 
@@ -31,14 +34,14 @@ bool solvePegBoard(PegBoard &gameBoard, Vector<Point> threatened);
 int main() {
   PegBoard gameBoard(7, 7, 2);
   std::cout << gameBoard.toString() << std::endl;
+  std::cout << "Working... may take over 2 hours depending on the CPU"
+            << std::endl;
   Vector<Point> threatened = gameBoard.getThreatenedPegs();
   solvePegBoard(gameBoard, threatened);
   return 0;
 }
 
 bool solvePegBoard(PegBoard &gameBoard, Vector<Point> threatened) {
-  if (gameBoard.numPegsLeft() == 1)
-    cout << gameBoard.toString() << endl;
   if (gameBoard.numPegsLeft() == 1 && gameBoard.pegInCenter()) {
     std::cout << "WINNER" << std::endl;
     std::cout << gameBoard.toString() << std::endl;
