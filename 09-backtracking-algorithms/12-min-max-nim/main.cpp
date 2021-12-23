@@ -12,7 +12,6 @@
  */
 
 #include <iostream>
-#include <string>
 
 #include "../../StanfordCPPLib/include/error.h"
 #include "../../StanfordCPPLib/include/simpio.h"
@@ -54,12 +53,14 @@ public:
   }
 
   void printInsructions() {
-    cout << "Welcome to the game of Nim!" << endl;
-    cout << "In this game, we will start with a pile of" << endl;
-    cout << N_COINS << " coins on the table.  On each turn, you" << endl;
-    cout << "and I will alternately take between 1 and" << endl;
-    cout << MAX_MOVE << " coins from the table.  The player who" << endl;
-    cout << "takes the last coin loses." << endl << endl;
+    std::cout << "Welcome to the game of Nim!" << std::endl;
+    std::cout << "In this game, we will start with a pile of" << std::endl;
+    std::cout << N_COINS << " coins on the table.  On each turn, you"
+              << std::endl;
+    std::cout << "and I will alternately take between 1 and" << std::endl;
+    std::cout << MAX_MOVE << " coins from the table.  The player who"
+              << std::endl;
+    std::cout << "takes the last coin loses." << std::endl << std::endl;
   }
 
 private:
@@ -71,7 +72,7 @@ private:
   bool gameIsOver() { return (nCoins <= 1); }
 
   void displayGame() {
-    cout << "There are " << nCoins << " coins in the pile" << endl;
+    std::cout << "There are " << nCoins << " coins in the pile" << std::endl;
   }
 
   Player getCurrentPLayer() { return whoseTurn; }
@@ -81,7 +82,7 @@ private:
   Move getComputerMove() { return findBestMove(); }
 
   void displayMove(Move move) {
-    cout << "I'll take " << move.nTaken << "." << endl;
+    std::cout << "I'll take " << move.nTaken << "." << std::endl;
   }
 
   void makeMove(Move move) { nCoins -= move.nTaken; }
@@ -128,9 +129,9 @@ private:
       int limit = (nCoins < MAX_MOVE) ? nCoins : MAX_MOVE;
       if (nTaken > 0 && nTaken <= limit)
         return nTaken;
-      cout << "That's cheating! Please choose a number";
-      cout << " between 1 and " << limit << "." << endl;
-      cout << "There are " << nCoins << " coins in the pile." << endl;
+      std::cout << "That's cheating! Please choose a number";
+      std::cout << " between 1 and " << limit << "." << std::endl;
+      std::cout << "There are " << nCoins << " coins in the pile." << std::endl;
     }
   }
 
@@ -170,13 +171,13 @@ private:
 
   void announceResult() {
     if (nCoins == 0) {
-      cout << "You took the last coin.  You lose." << endl;
+      std::cout << "You took the last coin.  You lose." << std::endl;
     } else {
-      cout << "There is only one coin left." << endl;
+      std::cout << "There is only one coin left." << std::endl;
       if (whoseTurn == HUMAN) {
-        cout << "I win." << endl;
+        std::cout << "I win." << std::endl;
       } else {
-        cout << "I lose." << endl;
+        std::cout << "I lose." << std::endl;
       }
     }
   }
