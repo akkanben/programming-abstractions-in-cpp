@@ -64,11 +64,14 @@ public:
     announceResult();
   }
   void printInsructions() {
-    cout << "Welcome to the game of Nim!" << endl;
-    cout << "In this game, we will start with 3 rows of coins" << endl;
-    cout << "on the table.  On each turn, you" << endl;
-    cout << "and I will alternately take coins from one row at a time." << endl;
-    cout << "The player who takes the last coin loses." << endl << endl;
+    std::cout << "Welcome to the game of Nim!" << std::endl;
+    std::cout << "In this game, we will start with 3 rows of coins"
+              << std::endl;
+    std::cout << "on the table.  On each turn, you" << std::endl;
+    std::cout << "and I will alternately take coins from one row at a time."
+              << std::endl;
+    std::cout << "The player who takes the last coin loses." << std::endl
+              << std::endl;
   }
 
 private:
@@ -90,10 +93,10 @@ private:
   bool gameIsOver() { return (nCoins <= 1); }
 
   void displayGame() {
-    cout << "The rows are as follows: " << endl;
-    cout << "Row 0: " << coinRows[0] << endl;
-    cout << "Row 1: " << coinRows[1] << endl;
-    cout << "Row 2: " << coinRows[2] << endl;
+    std::cout << "The rows are as follows: " << std::endl;
+    std::cout << "Row 0: " << coinRows[0] << std::endl;
+    std::cout << "Row 1: " << coinRows[1] << std::endl;
+    std::cout << "Row 2: " << coinRows[2] << std::endl;
   }
 
   Player getCurrentPLayer() { return whoseTurn; }
@@ -101,8 +104,8 @@ private:
   Move getComputerMove() { return findBestMove(); }
 
   void displayMove(Move move) {
-    cout << "I'll take " << move.nTaken << " from Row " << move.nRow << "."
-         << endl;
+    std::cout << "I'll take " << move.nTaken << " from Row " << move.nRow << "."
+              << std::endl;
   }
 
   void makeMove(Move move) {
@@ -156,8 +159,8 @@ private:
       int limit = coinRows[move.nRow].size();
       if (move.nTaken > 0 && move.nTaken <= limit)
         return move;
-      cout << "There are only " << limit << " coins left in Row" << move.nRow
-           << endl;
+      std::cout << "There are only " << limit << " coins left in Row"
+                << move.nRow << std::endl;
     }
   }
 
@@ -204,13 +207,13 @@ private:
 
   void announceResult() {
     if (nCoins == 0) {
-      cout << "You took the last coin.  You lose." << endl;
+      std::cout << "You took the last coin.  You lose." << std::endl;
     } else {
-      cout << "There is only one coin left." << endl;
+      std::cout << "There is only one coin left." << std::endl;
       if (whoseTurn == HUMAN) {
-        cout << "I win." << endl;
+        std::cout << "I win." << std::endl;
       } else {
-        cout << "I lose." << endl;
+        std::cout << "I lose." << std::endl;
       }
     }
   }
