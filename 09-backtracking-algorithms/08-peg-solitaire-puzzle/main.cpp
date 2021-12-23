@@ -1,6 +1,6 @@
 /* Programming Abstractions in C++
  *
- * Exercise
+ * Exercise 09-08
  *
  * In theory, the recursive backtracking strategy described in this chapter
  * should be sufficient to solve most puzzles that involve performing a sequence
