@@ -61,7 +61,6 @@ public:
   void play() {
     initGame();
     while (!gameIsOver()) {
-      // displayGame();
       if (getCurrentPLayer() == HUMAN) {
         displayGame();
         makeMove(getUserMove());
