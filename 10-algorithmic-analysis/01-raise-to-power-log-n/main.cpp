@@ -37,8 +37,9 @@ int main() {
 double logNRaiseToPower(double x, int n) {
   if (n == 1)
     return x;
+  double reducedPower = logNRaiseToPower(x, n / 2);
   if (n % 2 == 1)
-    return logNRaiseToPower(x, n / 2) * logNRaiseToPower(x, n / 2) * x;
+    return reducedPower * reducedPower * x;
   else
-    return logNRaiseToPower(x, n / 2) * logNRaiseToPower(x, n / 2);
+    return reducedPower * reducedPower;
 }
