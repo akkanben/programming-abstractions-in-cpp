@@ -28,8 +28,6 @@
 
 Vector<int> randomVectorOfSize(int size, int max);
 void sort(Vector<int> &vec);
-void quicksort(Vector<int> &vec, int start, int finish);
-int partition(Vector<int> &vec, int start, int finish);
 
 int main() {
   Vector<int> nSizes;
