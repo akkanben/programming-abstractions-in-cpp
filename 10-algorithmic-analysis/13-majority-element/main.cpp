@@ -58,14 +58,13 @@ int main() {
     std::cout << vec << std::endl;
     std::cout << "Majority Element: " << MajorityElement << std::endl;
   }
-
   return 0;
 }
 
 int findMajorityElement(Vector<int> &vec) {
   int majorityElementIndex = 0;
   int count = 1;
-  for (int i = 0; i < vec.size(); i++) {
+  for (int i = 1; i < vec.size(); i++) {
     if (vec[majorityElementIndex] == vec[i])
       count++;
     else
