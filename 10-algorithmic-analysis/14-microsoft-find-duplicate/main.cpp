@@ -1,6 +1,6 @@
 /* Programming Abstractions in C++
  *
- * Exercise
+ * Exercise 10-14
  *
  * If you enjoyed the previous problem, here’s an even more challenging one that
  * used to be an interview question at Microsoft. Suppose that you have a vector
