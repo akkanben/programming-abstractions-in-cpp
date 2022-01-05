@@ -14,8 +14,9 @@
  * Solution 2021 Ben Mills
  *
  * Example run on my machine:
+ *
  * Compairing crossover points for hybrid insertion/quicksort.
- * Readings per crossover test: 1
+ * Readings per crossover test: 10
  * Dataset size: 100000
  *  Crossover | Insertion | Selection
  * -----------+-----------+-----------
