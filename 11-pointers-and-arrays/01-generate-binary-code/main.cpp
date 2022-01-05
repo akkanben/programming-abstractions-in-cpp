@@ -46,13 +46,11 @@
 
 void generateBinaryCode(int nBits);
 Vector<std::string> getBinaryCodes(Vector<std::string> &vec, int nBits);
-double logNRaiseToPower(double x, int n);
 
 int main() {
   std::cout << "This program generates all the integers represented in binary "
                "that fit in a given bit range."
             << std::endl;
-  ;
   int bitSize = getInteger("Enter a number of bits to use: ");
   generateBinaryCode(bitSize);
   return 0;
