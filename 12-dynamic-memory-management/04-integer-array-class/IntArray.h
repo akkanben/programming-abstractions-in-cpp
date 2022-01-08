@@ -15,7 +15,6 @@ private:
 
   IntArray(const IntArray &src);
   IntArray &operator=(const IntArray &src);
-  void expandCapacity();
 };
 
 #endif
