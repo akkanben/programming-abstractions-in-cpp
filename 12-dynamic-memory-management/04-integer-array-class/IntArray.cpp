@@ -23,3 +23,7 @@ void IntArray::put(int k, int value) {
     error("Index out of bounds.");
   array[k] = value;
 }
+
+IntArray::IntArray(const IntArray &src) {}
+
+IntArray &IntArray::operator=(const IntArray &src) { return *this; }
