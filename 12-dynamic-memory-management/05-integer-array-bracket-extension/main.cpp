@@ -1,6 +1,6 @@
 /* Programming Abstractions in C++
  *
- * Exercise 12-04
+ * Exercise 12-05
  *
  * You can make the IntArray class from the preceding exercise look a little
  * more like traditional arrays by overriding the bracket-selection operator,
