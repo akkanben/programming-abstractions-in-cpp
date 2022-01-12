@@ -37,7 +37,6 @@ int main() {
     line = getLine("> ");
     TokenScanner scanner(line);
     scanner.ignoreWhitespace();
-    // scanner.scanNumbers();
     std::string v1, v2, op;
     v1 = scanner.nextToken();
     while (scanner.hasMoreTokens()) {
