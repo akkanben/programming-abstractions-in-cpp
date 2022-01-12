@@ -67,6 +67,8 @@ Tower *createTower(std::string name, Tower *link) {
   return tp;
 }
 
+// Adding the cout after the recursive call lets us display the linked list in
+// reverse so it matches figure 12-3 and the file.
 void signal(Tower *start) {
   if (start != NULL) {
     signal(start->link);
