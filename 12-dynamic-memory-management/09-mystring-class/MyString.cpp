@@ -23,7 +23,7 @@ std::string MyString::toString() const {
 
 int MyString::length() const { return count; }
 
-MyString MyString::substr(int start, int n) {
+MyString MyString::substr(int start, int n) const {
   if (start < 0 || start > count || n < 0 || n > count)
     error("Index out of bounds.");
   std::string temp = "";
@@ -33,7 +33,9 @@ MyString MyString::substr(int start, int n) {
   return MyString(temp);
 }
 
-MyString MyString::substr(int start) { return this->substr(start, count); }
+MyString MyString::substr(int start) const {
+  return this->substr(start, count);
+}
 
 char MyString::operator[](int index) const {
   if (index < 0 || index > count)
@@ -55,10 +57,7 @@ MyString operator+(MyString a, MyString b) {
   return MyString(a.toString() + b.toString());
 }
 
-MyString operator+=(MyString a, char ch) {
-  a = MyString(a.toString() + ch);
-  return a;
-}
+MyString operator+=(MyString a, char ch) { return MyString(a.toString() + ch); }
 
 MyString operator+=(MyString a, std::string str) {
   return MyString(a.toString() + str);

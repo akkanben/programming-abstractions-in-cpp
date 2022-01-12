@@ -10,8 +10,8 @@ public:
   MyString(const MyString &src);
   std::string toString() const;
   int length() const;
-  MyString substr(int start, int n);
-  MyString substr(int start);
+  MyString substr(int start, int n) const;
+  MyString substr(int start) const;
   char operator[](int index) const;
   MyString &operator=(const MyString &src);
   friend MyString operator+(MyString a, MyString b);
