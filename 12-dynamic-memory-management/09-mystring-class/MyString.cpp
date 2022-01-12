@@ -24,17 +24,17 @@ std::string MyString::toString() const {
 int MyString::length() const { return count; }
 
 MyString MyString::substr(int start, int n) const {
-  if (start < 0 || start > count || n < 0 || n > count)
+  if (start < 0 || start > count || n > count)
     error("Index out of bounds.");
-  std::string temp = "";
+  MyString temp = MyString("");
   for (int i = start; i < start + n; i++) {
     temp += array[i];
   }
-  return MyString(temp);
+  return MyString(temp.toString());
 }
 
 MyString MyString::substr(int start) const {
-  return this->substr(start, count);
+  return this->substr(start, count - start);
 }
 
 char MyString::operator[](int index) const {
@@ -57,14 +57,19 @@ MyString operator+(MyString a, MyString b) {
   return MyString(a.toString() + b.toString());
 }
 
-MyString operator+=(MyString a, char ch) { return MyString(a.toString() + ch); }
-
-MyString operator+=(MyString a, std::string str) {
-  return MyString(a.toString() + str);
+MyString operator+=(MyString &a, char ch) {
+  a = MyString(a.toString() + ch);
+  return a;
 }
 
-MyString operator+=(MyString a, MyString str) {
-  return MyString(a.toString() + str.toString());
+MyString operator+=(MyString &a, std::string str) {
+  a = MyString(a.toString() + str);
+  return a;
+}
+
+MyString operator+=(MyString &a, MyString str) {
+  a = MyString(a.toString() + str.toString());
+  return a;
 }
 
 void MyString::deepCopy(const MyString &src) {
