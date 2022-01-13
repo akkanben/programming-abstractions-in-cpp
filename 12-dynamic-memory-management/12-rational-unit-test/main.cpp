@@ -1,6 +1,6 @@
 /* Programming Abstractions in C++
  *
- * Exercise 12-11
+ * Exercise 12-13
  *
  * Write a unit test for the Rational class introduced in section 6.3. If you
  * have implemented the extensions to the Rational class described in exercise 8
