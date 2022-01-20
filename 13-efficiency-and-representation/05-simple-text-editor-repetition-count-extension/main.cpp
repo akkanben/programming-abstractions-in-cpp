@@ -1,3 +1,15 @@
+/* Programming Abstractions in C++
+ *
+ * Exercise 13-05
+ *
+ * Rewrite the editor application given in Figure 13-3 so that the F, B, and D
+ * commands take a repetition count specified by a string of digits before the
+ * command letter. Thus, the command 17F would move the cursor forward 17
+ * character positions.
+ *
+ * Solution 2021 Ben Mills
+ */
+
 #include <cctype>
 #include <iostream>
 
