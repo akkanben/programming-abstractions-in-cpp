@@ -1,22 +1,11 @@
 /* Programming Abstractions in C++
  *
- * Exercise 13-9
+ * Exercise 13-10
  *
- * For each of the three representations of the buffer given in this chapter,
- * implement the method
- *
- *  bool EditorBuffer::search(string str);
- *
- * When this method is called, it should start searching from the current cursor
- * position, looking for the next occurrence of the string str. If it finds it,
- * search should leave the cursor after the last character in str and return the
- * value true. If str does not occur between the cursor and the end of the
- * buffer, then search should leave the cursor unchanged and return false.
- *
- * To illustrate the operation of search, suppose that you have added the S
- * command to the editor.cpp program so that it calls the search method,
- * passing it the rest of the input line. Your program should then be able to
- * match the following sample run:
+ * Without making any changes to the EditorBuffer class interface beyond
+ * those required for exercise 9, add an R command to the editor application
+ * that replaces the next occurrence of one string with another, where the two
+ * strings are specified after the R command separated by a slash, as shown:
  *
  *  <image of sample run>
  *
