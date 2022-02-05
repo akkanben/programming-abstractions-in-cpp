@@ -41,6 +41,7 @@ int main() {
     std::cout << "1: Stack" << std::endl;
     std::cout << "2: Array" << std::endl;
     std::cout << "3: Linked List" << std::endl;
+    std::cout << "0: Quit" << std::endl;
     int cmd = getInteger("Which Editor? ");
     switch (cmd) {
     case 1:
